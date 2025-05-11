@@ -51,7 +51,7 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-2xl">
       <h1 className="text-4xl font-bold mb-8 text-primary text-center">Get In Touch</h1>
-      <Card className="shadow-xl">
+      <Card className="shadow-lg">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-semibold">Contact Information</CardTitle>
           <CardDescription>Feel free to reach out through any of these channels.</CardDescription>
@@ -76,7 +76,7 @@ export default function ContactPage() {
         </CardContent>
       </Card>
       {/* Optional: Add a contact form here in the future */}
-      {/* <Card className="mt-8 shadow-xl">
+      {/* <Card className="mt-8 shadow-lg">
         <CardHeader>
           <CardTitle>Send a Message</CardTitle>
         </CardHeader>

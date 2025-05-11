@@ -54,7 +54,7 @@ export default function ProjectsPage() {
       <h1 className="text-4xl font-bold mb-8 text-primary">Project Portfolio</h1>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-1">
         {projects.map((project) => (
-          <Card key={project.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card key={project.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             {project.imageUrl && (
               <div className="relative w-full h-64">
                 <Image

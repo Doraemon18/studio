@@ -22,7 +22,7 @@ export default function SkillsPage() {
       
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {skillCategories.map(category => (
-          <Card key={category} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card key={category} className="shadow-md hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary">{category}</CardTitle>
             </CardHeader>

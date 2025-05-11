@@ -10,7 +10,7 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto max-w-4xl py-8 px-4">
-      <Card className="overflow-hidden shadow-xl">
+      <Card className="overflow-hidden shadow-lg">
         <div className="md:flex">
           <div className="md:w-1/3 p-0 relative">
             <Image
@@ -37,13 +37,13 @@ export default function HomePage() {
                 {bio}
               </p>
               <div className="flex space-x-4">
-                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90 border-instagram">
+                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90">
                   <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" target="_blank" rel="noopener noreferrer">
                     <Instagram className="mr-2 h-5 w-5" />
                     Instagram
                   </Link>
                 </Button>
-                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90 border-linkedin">
+                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90">
                   <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn

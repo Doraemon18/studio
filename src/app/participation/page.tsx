@@ -61,7 +61,7 @@ export default function ParticipationPage() {
       <h1 className="text-4xl font-bold mb-8 text-primary">My Participations</h1>
       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {participationItems.map((item) => (
-          <Card key={item.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <Card key={item.id} className="shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
             <CardHeader className="flex-shrink-0">
               <div className="flex items-center mb-2">
                 <item.icon className="h-8 w-8 mr-3 text-primary" />
