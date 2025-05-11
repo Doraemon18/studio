@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; // Avatar components are not used for the main profile picture here.
 import { ArrowRight, Download, Briefcase, Lightbulb, Award, Users, Linkedin, Instagram } from 'lucide-react';
 
 export default function HomePage() {
@@ -11,7 +10,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-primary/10 via-background to-background">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-background via-background to-background dark:from-primary/5 dark:via-background dark:to-background">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
@@ -27,11 +26,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center lg:justify-start">
-                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Link href="/projects">
-                      View Projects <Briefcase className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
+                  
                   <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
                     <Link href="/contact">
                       Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
@@ -54,7 +49,7 @@ export default function HomePage() {
               <div className="w-full md:w-2/3 lg:w-full flex justify-center items-center p-4 md:p-0 mx-auto lg:mx-0">
                 <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105">
                   <Image
-                    src="/images/profile-ranvir.jpg"
+                    src="/profile-ranvir.jpg" 
                     alt="Ranvir Kumar"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -99,21 +94,6 @@ export default function HomePage() {
           </div>
         </section>
         
-        {/* Call to Action for Resume (Optional) */}
-        {/* <section className="w-full py-12 md:py-24 bg-muted/40">
-          <div className="container flex flex-col items-center gap-4 px-4 text-center md:px-6">
-            <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl text-primary">
-              Want to know more?
-            </h3>
-            <p className="max-w-[600px] text-muted-foreground">
-              Download my resume for a detailed overview of my qualifications and experience.
-              (Note: Resume upload/download functionality is a mock-up.)
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Download className="mr-2 h-5 w-5" /> Download Resume (Mock)
-            </Button>
-          </div>
-        </section> */}
       </main>
 
       <footer className="py-6 md:py-8 border-t bg-background">
@@ -128,10 +108,10 @@ export default function HomePage() {
             <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" passHref target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
-            {/* Add other social links here if needed */}
           </div>
         </div>
       </footer>
     </div>
   );
 }
+
