@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { PropsWithChildren } from "react";
@@ -15,7 +14,7 @@ import {
 } from "@/components/ui/sidebar";
 import { SidebarNav } from "./sidebar-nav";
 import { Button } from "@/components/ui/button"; // Import Button for the new toggle
-import { Menu, X } from "lucide-react"; // Import Menu and X icons
+import { Menu, X, LayoutDashboard } from "lucide-react"; // Import Menu, X, and LayoutDashboard icons
 import Link from "next/link";
 
 // Inner component to consume sidebar context, as hooks must be called within Provider's children
@@ -31,8 +30,11 @@ const LayoutContent = ({ children }: PropsWithChildren) => {
         <SidebarRail />
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
-              Ranvir's Portfolio
+            <Link href="/" className="flex items-center gap-2 font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
+              <LayoutDashboard className="h-5 w-5 flex-shrink-0" />
+              <span className="group-data-[collapsible=icon]:hidden">
+                Ranvir's Portfolio
+              </span>
             </Link>
             {/* Toggle button inside SidebarHeader: shows X if open, Menu if closed */}
             <Button
