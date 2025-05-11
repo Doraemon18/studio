@@ -41,25 +41,23 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
-              <div className="w-full md:w-2/3 lg:w-full flex justify-center items-center p-4 md:p-0 mx-auto lg:mx-0">
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105">
-                  <Image
-                    src="/profile-picture.jpg"
-                    alt="Ranvir Kumar"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="rounded-full"
-                    priority
-                    sizes="(max-width: 640px) 10rem, (max-width: 768px) 12rem, (max-width: 1024px) 14rem, (max-width: 1280px) 16rem, 18rem"
-                    data-ai-hint="profile picture"
-                  />
-                </div>
+              {/* Profile Picture Section: Modified div to be the image frame and increased size */}
+              <div 
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
+              >
+                <Image
+                  src="/profile-ranvir.jpg" // Updated path
+                  alt="Ranvir Kumar"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
+                  sizes="(max-width: 639px) 12rem, (max-width: 767px) 14rem, (max-width: 1023px) 16rem, (max-width: 1279px) 20rem, 24rem"
+                  data-ai-hint="profile picture"
+                />
               </div>
             </div>
           </div>
         </section>
-
-        {/* Quick Links/Overview Section - REMOVED AS PER USER REQUEST */}
         
       </main>
 
@@ -81,4 +79,3 @@ export default function HomePage() {
     </div>
   );
 }
-
