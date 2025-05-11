@@ -36,7 +36,7 @@ const participationItems: ParticipationItem[] = [
     id: "4",
     title: "General Knowledge Quiz Finals",
     category: "Quizzes",
-    description: "Reached the final round of the campus-wide GK quiz.",
+    description: "Participated Variety of Quizzes Competition.",
     icon: Lightbulb
   },
   {
