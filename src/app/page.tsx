@@ -10,40 +10,40 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto max-w-4xl py-8 px-4">
-      <Card className="overflow-hidden shadow-lg">
+      <Card className="overflow-hidden shadow-lg rounded-xl">
         <div className="md:flex">
-          <div className="md:w-1/3 p-0 relative">
+          <div className="md:w-1/3 p-0 relative min-h-[300px] md:min-h-0">
             <Image
               src="https://picsum.photos/400/600"
               alt="Ranvir Kumar - Profile Picture"
-              width={400}
-              height={600}
-              className="object-cover w-full h-full md:rounded-l-lg"
+              layout="fill"
+              objectFit="cover"
+              className="md:rounded-l-xl"
               priority
               data-ai-hint="man standing professional"
             />
           </div>
-          <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+          <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center bg-card">
             <CardHeader className="p-0 mb-4">
-              <CardTitle className="text-3xl font-bold text-primary">
+              <CardTitle className="text-3xl lg:text-4xl font-bold text-primary">
                 Ranvir Kumar
               </CardTitle>
-              <CardDescription className="text-lg text-muted-foreground">
+              <CardDescription className="text-lg text-muted-foreground mt-1">
                 B.Tech Civil Engineering, IIT Kharagpur
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <p className="text-base leading-relaxed mb-6">
+              <p className="text-base leading-relaxed mb-6 text-foreground/90">
                 {bio}
               </p>
-              <div className="flex space-x-4">
-                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90">
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" target="_blank" rel="noopener noreferrer">
                     <Instagram className="mr-2 h-5 w-5" />
                     Instagram
                   </Link>
                 </Button>
-                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90">
+                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn
@@ -57,3 +57,4 @@ export default function HomePage() {
     </div>
   );
 }
+
