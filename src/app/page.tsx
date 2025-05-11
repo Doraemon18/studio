@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -26,7 +25,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center lg:justify-start">
-                  {/* Removed "Get in Touch" button as per user request */}
+                  {/* Removed "Get in Touch" and "View Projects" buttons as per user request */}
                 </div>
                 <div className="flex justify-center lg:justify-start space-x-4 mt-4">
                   <Button asChild variant="outline" size="lg" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--instagram))' }}>
@@ -41,17 +40,17 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
-              {/* Profile Picture Section: Modified div to be the image frame and increased size */}
-              <div 
-                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
+              {/* Profile Picture Section: Increased size and ensured circular shape */}
+              <div
+                className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
               >
                 <Image
-                  src="/profile-ranvir.jpg" // Updated path
+                  src="/profile-ranvir.jpg"
                   alt="Ranvir Kumar"
                   fill
                   style={{ objectFit: 'cover' }}
                   priority
-                  sizes="(max-width: 639px) 12rem, (max-width: 767px) 14rem, (max-width: 1023px) 16rem, (max-width: 1279px) 20rem, 24rem"
+                  sizes="(max-width: 639px) 14rem, (max-width: 767px) 16rem, (max-width: 1023px) 20rem, (max-width: 1279px) 24rem, 28rem"
                   data-ai-hint="profile picture"
                 />
               </div>
