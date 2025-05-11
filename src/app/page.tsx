@@ -1,8 +1,8 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Briefcase, Lightbulb, Award, Users, Linkedin, Instagram } from 'lucide-react';
+import { Linkedin, Instagram } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -45,7 +45,7 @@ export default function HomePage() {
                 className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
               >
                 <Image
-                  src="/profile-ranvir.jpg"
+                  src="https://i.ibb.co/mXNnZFC/IMG-20240331-184756.jpg" // Updated image URL
                   alt="Ranvir Kumar"
                   fill
                   style={{ objectFit: 'cover' }}
