@@ -6,28 +6,44 @@ import {
   SidebarProvider,
   Sidebar,
   SidebarHeader,
-  SidebarTrigger,
+  // SidebarTrigger, // No longer using the standalone trigger in the main app bar
   SidebarContent,
   SidebarInset,
   SidebarFooter,
-  SidebarRail, 
+  SidebarRail,
+  useSidebar, // Import useSidebar to access sidebar state
 } from "@/components/ui/sidebar";
 import { SidebarNav } from "./sidebar-nav";
-import { Button } from "@/components/ui/button";
-import { LogOut } from "lucide-react";
+import { Button } from "@/components/ui/button"; // Import Button for the new toggle
+import { Menu, X } from "lucide-react"; // Import Menu and X icons
 import Link from "next/link";
 
-export function MainLayout({ children }: PropsWithChildren) {
+// Inner component to consume sidebar context, as hooks must be called within Provider's children
+const LayoutContent = ({ children }: PropsWithChildren) => {
+  const { open, openMobile, isMobile, toggleSidebar } = useSidebar();
+
+  // Determine if the sidebar is effectively open, considering mobile and desktop states
+  const sidebarEffectivelyOpen = isMobile ? openMobile : open;
+
   return (
-    <SidebarProvider defaultOpen={true}> 
-      <Sidebar collapsible="icon"> 
-        <SidebarRail /> 
+    <>
+      <Sidebar collapsible="icon">
+        <SidebarRail />
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
               Ranvir's Portfolio
             </Link>
-            {/* SidebarTrigger is often placed outside or within SidebarInset for mobile */}
+            {/* Toggle button inside SidebarHeader: shows X if open, Menu if closed */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleSidebar}
+              className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+              aria-label={sidebarEffectivelyOpen ? "Close sidebar" : "Open sidebar"}
+            >
+              {sidebarEffectivelyOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           </div>
         </SidebarHeader>
         <SidebarContent className="p-0">
@@ -42,12 +58,8 @@ export function MainLayout({ children }: PropsWithChildren) {
         </SidebarFooter>
       </Sidebar>
       <SidebarInset className="flex flex-col">
+        {/* Header in main content area - SidebarTrigger removed from here */}
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-auto sm:border-0 sm:bg-transparent sm:px-6 sm:py-4">
-            {/* Trigger for Sidebar (Mobile and Desktop) */}
-            <div> {/* Removed md:hidden class to make it visible on all screen sizes */}
-                 <SidebarTrigger />
-            </div>
-           {/* Placeholder for potential top bar content */}
            <div className="flex-grow"></div>
            {/* Optional: User Menu / Settings */}
         </header>
@@ -55,7 +67,15 @@ export function MainLayout({ children }: PropsWithChildren) {
             {children}
         </main>
       </SidebarInset>
+    </>
+  );
+};
+
+export function MainLayout({ children }: PropsWithChildren) {
+  return (
+    // defaultOpen={true} makes the sidebar expanded by default on desktop
+    <SidebarProvider defaultOpen={true}>
+      <LayoutContent>{children}</LayoutContent>
     </SidebarProvider>
   );
 }
-
