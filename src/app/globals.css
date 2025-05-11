@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    --background: 270 75% 96%; /* Light Purple */
+    --background: 210 100% 96%; /* Light Blue */
     --foreground: 240 10% 10%; /* Darker Black/Gray for stronger contrast */
     --card: 0 0% 100%; /* White cards, standard */
     --card-foreground: 240 10% 3.9%;
@@ -18,14 +18,14 @@ body {
     --primary-foreground: 0 0% 98%; /* White text on primary */
     --secondary: 240 4.8% 95.9%; /* Light gray for secondary elements */
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 270 20% 93%; /* Lighter purple for muted backgrounds or slightly less emphasis than secondary */
-    --muted-foreground: 270 10% 45%; /* Muted text, adjusted for purple theme */
+    --muted: 210 30% 93%; /* Lighter blue for muted backgrounds or slightly less emphasis than secondary */
+    --muted-foreground: 210 10% 45%; /* Muted text, adjusted for blue theme */
     --accent: 221.2 83.2% 53.3%; /* Blue for accents, same as primary */
     --accent-foreground: 0 0% 98%; /* White text on accent */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 270 20% 88%; /* Softer border, matching light purple theme */
-    --input: 270 20% 90%; /* Input background, consistent with border */
+    --border: 210 20% 88%; /* Softer border, matching light blue theme */
+    --input: 210 20% 90%; /* Input background, consistent with border */
     --ring: 221.2 83.2% 53.3%; /* Blue for focus rings */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -35,40 +35,41 @@ body {
     --radius: 0.5rem;
 
     /* Sidebar Theme */
-    --sidebar-background: 270 40% 98%; /* Very Light Cool Purple - almost white */
-    --sidebar-foreground: 270 10% 25%; /* Dark Cool Purple/Gray text */
+    --sidebar-background: 210 40% 98%; /* Very Light Cool Blue - almost white */
+    --sidebar-foreground: 210 10% 25%; /* Dark Cool Blue/Gray text */
     --sidebar-primary: 221.2 83.2% 53.3%; /* Blue (same as main primary) */
     --sidebar-primary-foreground: 0 0% 98%; /* White (same as main primary fg) */
-    --sidebar-accent: 270 40% 93%; /* Slightly darker light cool purple for hover */
-    --sidebar-accent-foreground: 270 10% 15%; /* Darkest cool purple/gray for hover text */
-    --sidebar-border: 270 30% 90%; /* Light cool purple border */
+    --sidebar-accent: 210 40% 93%; /* Slightly darker light cool blue for hover */
+    --sidebar-accent-foreground: 210 10% 15%; /* Darkest cool blue/gray for hover text */
+    --sidebar-border: 210 30% 90%; /* Light cool blue border */
     --sidebar-ring: 221.2 83.2% 53.3%; /* Blue */
 
     /* Brand Colors */
     --instagram: 343 76% 53%; /* Instagram Pink/Magenta */
     --linkedin: 211 100% 45%; /* LinkedIn Blue */
     --whatsapp: 142 70% 49%; /* WhatsApp Green */
+    --email: 197 80% 48%; /* Generic Email Blue */
   }
 
   .dark {
-    --background: 270 10% 10%; /* Dark Purple/Gray */
-    --foreground: 270 10% 95%; /* Light Gray/Purple for text */
-    --card: 270 10% 12%; /* Slightly off-black/purple for cards */
-    --card-foreground: 270 10% 95%;
-    --popover: 270 10% 12%;
-    --popover-foreground: 270 10% 95%;
+    --background: 210 10% 10%; /* Dark Blue/Gray */
+    --foreground: 210 10% 95%; /* Light Gray/Blue for text */
+    --card: 210 10% 12%; /* Slightly off-black/blue for cards */
+    --card-foreground: 210 10% 95%;
+    --popover: 210 10% 12%;
+    --popover-foreground: 210 10% 95%;
     --primary: 217.2 91.2% 59.8%; /* Blue - kept for dark mode consistency */
     --primary-foreground: 0 0% 98%;
-    --secondary: 270 5% 15.9%; /* Darker purple/gray secondary */
-    --secondary-foreground: 270 10% 98%;
-    --muted: 270 8% 18%; /* Muted dark purple */
-    --muted-foreground: 270 8% 60%;
+    --secondary: 210 5% 15.9%; /* Darker blue/gray secondary */
+    --secondary-foreground: 210 10% 98%;
+    --muted: 210 8% 18%; /* Muted dark blue */
+    --muted-foreground: 210 8% 60%;
     --accent: 217.2 91.2% 59.8%; /* Blue */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 270 8% 20%; /* Dark purple/gray border */
-    --input: 270 8% 20%;
+    --border: 210 8% 20%; /* Dark blue/gray border */
+    --input: 210 8% 20%;
     --ring: 217.2 91.2% 59.8%; /* Blue */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -77,19 +78,20 @@ body {
     --chart-5: 340 75% 55%;
 
     /* Dark Sidebar Theme */
-    --sidebar-background: 270 10% 18%; /* Dark Slate Purple/Gray */
-    --sidebar-foreground: 270 10% 85%; /* Light Cool Purple/Gray text */
+    --sidebar-background: 210 10% 18%; /* Dark Slate Blue/Gray */
+    --sidebar-foreground: 210 10% 85%; /* Light Cool Blue/Gray text */
     --sidebar-primary: 217.2 91.2% 59.8%; /* Blue (same as main primary dark) */
     --sidebar-primary-foreground: 0 0% 98%; /* White */
-    --sidebar-accent: 270 10% 23%; /* Slightly Lighter Dark Slate for hover */
-    --sidebar-accent-foreground: 270 10% 95%; /* Very Light Cool Purple/Gray for hover text */
-    --sidebar-border: 270 10% 25%;
+    --sidebar-accent: 210 10% 23%; /* Slightly Lighter Dark Slate for hover */
+    --sidebar-accent-foreground: 210 10% 95%; /* Very Light Cool Blue/Gray for hover text */
+    --sidebar-border: 210 10% 25%;
     --sidebar-ring: 217.2 91.2% 59.8%; /* Blue */
 
     /* Brand Colors */
     --instagram: 343 76% 53%; 
     --linkedin: 211 100% 45%;
     --whatsapp: 142 70% 49%; /* WhatsApp Green */
+    --email: 197 80% 48%; /* Generic Email Blue */
   }
 }
 
@@ -101,3 +103,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
