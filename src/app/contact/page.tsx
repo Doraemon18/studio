@@ -60,13 +60,13 @@ export default function ContactPage() {
         <CardContent className="space-y-6">
           {contactDetails.map((detail) => (
             <div key={detail.id} className="flex items-start space-x-4 p-4 rounded-lg border bg-card hover:bg-muted/50 transition-colors">
-              <detail.icon className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+              <detail.icon className={detail.id === 'whatsapp' ? "h-8 w-8 text-whatsapp mt-1 flex-shrink-0" : "h-8 w-8 text-primary mt-1 flex-shrink-0"} />
               <div className="flex-grow">
                 <h3 className="text-lg font-medium">{detail.label}</h3>
                 <p className="text-muted-foreground">{detail.value}</p>
               </div>
               {detail.href && detail.actionText && (
-                <Button asChild variant="outline" size="sm" className="self-center border-primary text-primary hover:bg-primary/10">
+                <Button asChild variant="outline" size="sm" className={`self-center border-primary text-primary hover:bg-primary/10 ${detail.id === 'whatsapp' ? 'border-whatsapp text-whatsapp hover:bg-whatsapp/10' : ''}`}>
                   <Link href={detail.href} target="_blank" rel="noopener noreferrer">
                     {detail.actionText}
                   </Link>

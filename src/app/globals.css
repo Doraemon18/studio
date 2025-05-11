@@ -47,6 +47,7 @@ body {
     /* Brand Colors */
     --instagram: 343 76% 53%; /* Instagram Pink/Magenta */
     --linkedin: 211 100% 45%; /* LinkedIn Blue */
+    --whatsapp: 142 70% 49%; /* WhatsApp Green */
   }
 
   .dark {
@@ -88,6 +89,7 @@ body {
     /* Brand Colors */
     --instagram: 343 76% 53%; 
     --linkedin: 211 100% 45%;
+    --whatsapp: 142 70% 49%; /* WhatsApp Green */
   }
 }
 

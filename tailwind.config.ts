@@ -61,7 +61,8 @@ export default {
   				ring: 'hsl(var(--sidebar-ring))'
   			},
         instagram: 'hsl(var(--instagram))',
-        linkedin: 'hsl(var(--linkedin))', // Added LinkedIn color
+        linkedin: 'hsl(var(--linkedin))', 
+        whatsapp: 'hsl(var(--whatsapp))', // Added WhatsApp color
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
