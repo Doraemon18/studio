@@ -17,10 +17,10 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     id: "1",
-    title: "Top Performer - CAD Design Competition",
+    title: "Effective Leadership",
     type: "Certificate",
-    date: "May 2023",
-    issuer: "IIT Kharagpur, Civil Engineering Dept.",
+    date: " 8th MAY 2025",
+    issuer: "HP FOUNDATION & HP LIFE",
     documenturl: "/certificate_(1).pdf",
   },
   {

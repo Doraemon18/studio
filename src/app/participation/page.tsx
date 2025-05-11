@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ListChecks, Trophy, Laptop, Users, Lightbulb, Car } from "lucide-react"; // Example icons, added Car for Road Safety
+import { cn } from "@/lib/utils";
 
 interface ParticipationItem {
   id: string;
@@ -67,7 +68,12 @@ export default function ParticipationPage() {
                 <item.icon className="h-8 w-8 mr-3 text-primary" />
                 <CardTitle className="text-xl font-semibold text-primary">{item.title}</CardTitle>
               </div>
-              <CardDescription className="text-sm font-medium text-accent-foreground/80 bg-accent/20 px-2 py-1 rounded-full inline-block">
+              <CardDescription className={cn(
+                "text-sm px-2 py-1 rounded-full inline-block bg-accent/20", // Common styles including background
+                item.category === "Sports" 
+                  ? "font-bold text-foreground" // For "Sports": bold, dark black text
+                  : "font-medium text-accent-foreground/80" // Original style for others
+              )}>
                 {item.category}
               </CardDescription>
             </CardHeader>
