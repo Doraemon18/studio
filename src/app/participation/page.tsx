@@ -15,7 +15,7 @@ const participationItems: ParticipationItem[] = [
     id: "1",
     title: "Inter-Hall Cricket Tournament",
     category: "Sports",
-    description: "Represented my hall in the annual IIT KGP cricket league.",
+    description: "Represented my hall in the annual IIT KGP Inter Hall cricket league.",
     icon: Trophy
   },
   {
@@ -41,10 +41,10 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "5",
-    title: "Road Safety Hackathon",
+    title: "Road Safety Hackathon", //Kshitij Tech Hackathon -> Road Safety Hackathon (as per previous request, keeping it consistent)
     category: "Hackathons",
     description: "Developed a prototype for a social impact project focusing on road safety within 24 hours.",
-    icon: Car
+    icon: Car 
   },
   {
     id: "6",
