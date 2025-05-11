@@ -70,8 +70,8 @@ export default function ParticipationPage() {
               </div>
               <CardDescription className={cn(
                 "text-sm px-2 py-1 rounded-full inline-block bg-accent/20", // Common styles including background
-                item.category === "Sports" 
-                  ? "font-bold text-foreground" // For "Sports": bold, dark black text
+                item.category === "Sports" || item.category === "Tech"
+                  ? "font-bold text-foreground" // For "Sports" or "Tech": bold, dark black text
                   : "font-medium text-accent-foreground/80" // Original style for others
               )}>
                 {item.category}
