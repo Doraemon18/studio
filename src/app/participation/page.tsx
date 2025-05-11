@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ListChecks, Trophy, Laptop, Users, Lightbulb } from "lucide-react"; // Example icons
+import { ListChecks, Trophy, Laptop, Users, Lightbulb, Car } from "lucide-react"; // Example icons, added Car for Road Safety
 
 interface ParticipationItem {
   id: string;
@@ -41,10 +41,10 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "5",
-    title: "Kshitij Tech Hackathon",
+    title: "Road Safety Hackathon", // Updated title
     category: "Hackathons",
-    description: "Developed a prototype for a social impact project within 24 hours.",
-    icon: Laptop
+    description: "Developed a prototype for a social impact project focusing on road safety within 24 hours.", // Updated description to match
+    icon: Car // Changed icon to Car for relevance
   },
   {
     id: "6",
@@ -83,3 +83,4 @@ export default function ParticipationPage() {
     </div>
   );
 }
+
