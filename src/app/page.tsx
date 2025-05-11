@@ -10,15 +10,15 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto max-w-4xl py-8 px-4">
-      <Card className="overflow-hidden shadow-lg rounded-xl">
+      <Card className="overflow-hidden shadow-xl rounded-2xl">
         <div className="md:flex">
-          <div className="md:w-1/3 p-0 relative min-h-[300px] md:min-h-0">
+          <div className="md:w-1/3 p-0 relative min-h-[300px] md:min-h-[400px]">
             <Image
-              src="https://picsum.photos/400/600"
+              src="https://drive.google.com/file/d/1-mJ5dMeXWMeHHDV71qsni3tXlCfvg8ek/view?usp=drivesdk"
               alt="Ranvir Kumar - Profile Picture"
               layout="fill"
               objectFit="cover"
-              className="md:rounded-l-xl"
+              className="md:rounded-l-2xl"
               priority
               data-ai-hint="man standing professional"
             />
@@ -36,14 +36,14 @@ export default function HomePage() {
               <p className="text-base leading-relaxed mb-6 text-foreground/90">
                 {bio}
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 sm:flex-none">
                   <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" target="_blank" rel="noopener noreferrer">
                     <Instagram className="mr-2 h-5 w-5" />
                     Instagram
                   </Link>
                 </Button>
-                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 sm:flex-none">
                   <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn
@@ -57,4 +57,3 @@ export default function HomePage() {
     </div>
   );
 }
-
