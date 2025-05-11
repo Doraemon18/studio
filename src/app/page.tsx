@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Download, Briefcase, Lightbulb, Award, Users, Linkedin, Instagram } from 'lucide-react';
+import { ArrowRight, Briefcase, Lightbulb, Award, Users, Linkedin, Instagram } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -26,12 +26,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center lg:justify-start">
-                  
-                  <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-                    <Link href="/contact">
-                      Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
+                  {/* Removed "Get in Touch" button as per user request */}
                 </div>
                 <div className="flex justify-center lg:justify-start space-x-4 mt-4">
                   <Button asChild variant="outline" size="lg" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--instagram))' }}>
@@ -49,7 +44,7 @@ export default function HomePage() {
               <div className="w-full md:w-2/3 lg:w-full flex justify-center items-center p-4 md:p-0 mx-auto lg:mx-0">
                 <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105">
                   <Image
-                    src="/profile-ranvir.jpg" 
+                    src="/IMG_20250331_184756.jpg"
                     alt="Ranvir Kumar"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -114,4 +109,3 @@ export default function HomePage() {
     </div>
   );
 }
-
