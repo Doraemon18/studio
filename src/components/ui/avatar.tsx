@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -26,7 +27,7 @@ const AvatarImage = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
     ref={ref}
-    src="https://i.ibb.co/mXNnZFC/IMG-20240331-184756.jpg"
+    src="/IMG_20250331_184756.jpg"
     alt="User Avatar"
     className={cn("aspect-square h-full w-full object-cover", className)}
     {...props}

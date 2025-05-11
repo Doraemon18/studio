@@ -17,8 +17,8 @@ export default function HomePage() {
                 className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
               >
                 <Image
-                  src="https://i.ibb.co/S7mwkhB/IMG-20250331-184756.jpg" 
-                  alt="Ranvir Kumar"
+       
+                  src="/IMG_20250331_184756.jpg" alt="Ranvir Kumar"
                   fill
                   style={{ objectFit: 'cover' }}
                   priority
