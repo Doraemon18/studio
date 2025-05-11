@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { PropsWithChildren } from "react";
@@ -10,6 +9,7 @@ import {
   SidebarContent,
   SidebarInset,
   SidebarFooter,
+  SidebarRail, // Import SidebarRail
 } from "@/components/ui/sidebar";
 import { SidebarNav } from "./sidebar-nav";
 import { Button } from "@/components/ui/button";
@@ -18,8 +18,9 @@ import Link from "next/link";
 
 export function MainLayout({ children }: PropsWithChildren) {
   return (
-    <SidebarProvider defaultOpen={false}>
-      <Sidebar>
+    <SidebarProvider defaultOpen={true}> {/* Changed defaultOpen to true */}
+      <Sidebar collapsible="icon"> {/* Added collapsible="icon" */}
+        <SidebarRail /> {/* Added SidebarRail for desktop toggle */}
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
