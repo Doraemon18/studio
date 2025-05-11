@@ -43,6 +43,9 @@ body {
     --sidebar-accent-foreground: 270 10% 15%; /* Darkest purple for hover text */
     --sidebar-border: 270 50% 85%;
     --sidebar-ring: 221.2 83.2% 53.3%; /* Blue */
+
+    /* Brand Colors */
+    --instagram: 343 76% 53%; /* Instagram Pink/Magenta */
   }
 
   .dark {
@@ -80,6 +83,9 @@ body {
     --sidebar-accent-foreground: 0 0% 95%; /* Lighter gray for hover text */
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%; /* Blue */
+
+    /* Brand Colors */
+    --instagram: 343 76% 53%; /* Instagram Pink/Magenta - kept same for dark mode, adjust if needed */
   }
 }
 

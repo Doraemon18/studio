@@ -37,7 +37,7 @@ export default function HomePage() {
                 {bio}
               </p>
               <div className="flex space-x-4">
-                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+                <Button asChild size="lg" className="bg-instagram text-primary-foreground hover:bg-instagram/90 border-instagram">
                   <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" target="_blank" rel="noopener noreferrer">
                     <Instagram className="mr-2 h-5 w-5" />
                     Instagram
