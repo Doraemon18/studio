@@ -1,8 +1,9 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, UploadCloud, PlusCircle } from "lucide-react";
+import { FileText, PlusCircle } from "lucide-react"; // Removed UploadCloud as the section is removed
 
 interface Achievement {
   id: string;
@@ -39,6 +40,14 @@ const achievements: Achievement[] = [
 ];
 
 export default function AchievementsPage() {
+  const handleViewClick = (url?: string) => {
+    if (url) {
+      window.open(url, "_blank");
+    } else {
+      alert("No document available for this achievement.");
+    }
+  };
+
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
@@ -49,32 +58,7 @@ export default function AchievementsPage() {
         </Button>
       </div>
 
-      <Card className="mb-8 shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-xl font-semibold">Upload Your Achievements</CardTitle>
-          <CardDescription>
-            You can upload up to 50 certificates or achievement proofs in PNG or PDF format.
-            (Note: Actual upload functionality is not implemented in this version.)
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center justify-center w-full">
-            <label
-              htmlFor="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-muted hover:bg-muted/80 border-primary/50"
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <UploadCloud className="w-10 h-10 mb-3 text-primary" />
-                <p className="mb-2 text-sm text-muted-foreground">
-                  <span className="font-semibold">Click to upload</span> or drag and drop
-                </p>
-                <p className="text-xs text-muted-foreground">PNG or PDF (MAX. 5MB)</p>
-              </div>
-              <input id="dropzone-file" type="file" className="hidden" disabled />
-            </label>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Removed the upload card section */}
 
       <h2 className="text-2xl font-semibold mb-6">My Collection</h2>
       {achievements.length === 0 ? (
@@ -96,13 +80,7 @@ export default function AchievementsPage() {
                   variant="outline"
                   size="sm"
                   className="border-primary text-primary hover:bg-primary/10"
-                  onClick={() => {
-                    if (achievement.documenturl) {
-                      window.open(achievement.documenturl, "_blank");
-                    } else {
-                      alert("No document available for this achievement.");
-                    }
-                  }}
+                  onClick={() => handleViewClick(achievement.documenturl)}
                 >
                   View
                 </Button>
