@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MessageSquare, MapPin } from "lucide-react"; // MessageSquare for WhatsApp, MapPin for generic location
+import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
+import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 
 interface ContactDetail {
   id: string;
@@ -35,7 +36,7 @@ const contactDetails: ContactDetail[] = [
     label: "WhatsApp",
     value: "+91 9199693802",
     href: "https://wa.me/919199693802", // Standard WhatsApp link
-    icon: MessageSquare, // Using MessageSquare as a proxy for WhatsApp
+    icon: WhatsappIcon, // Using custom WhatsApp icon
     actionText: "Message on WhatsApp"
   },
   {
