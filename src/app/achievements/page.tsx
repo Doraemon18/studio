@@ -55,7 +55,7 @@ export default function AchievementsPage() {
         {/* Removed "Add New (Mock)" button */}
       </div>
 
-      <h2 className="text-2xl font-semibold mb-6">My Collection</h2>
+      {/* <h2 className="text-2xl font-semibold mb-6">My Collection</h2> Removed this line */}
       {achievements.length === 0 ? (
         <p className="text-muted-foreground">No achievements added yet.</p>
       ) : (
@@ -90,3 +90,4 @@ export default function AchievementsPage() {
     </div>
   );
 }
+
