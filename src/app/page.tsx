@@ -14,13 +14,13 @@ export default function HomePage() {
         <div className="md:flex">
           <div className="md:w-1/3 p-0 relative min-h-[300px] md:min-h-[400px] bg-muted/30">
             <Image
-              src="https://picsum.photos/400/600" 
+              src="/IMG_20250331_184756.jpg" // IMPORTANT: User must place their image named 'IMG_20250331_184756.jpg' in the 'public' directory.
               alt="Ranvir Kumar - Profile Picture"
               layout="fill"
               objectFit="cover"
               className="md:rounded-l-2xl"
               priority
-              data-ai-hint="man crossed arms" 
+              data-ai-hint="profile picture man" 
             />
           </div>
           <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
