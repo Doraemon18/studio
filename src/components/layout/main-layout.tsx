@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { PropsWithChildren } from "react";
@@ -9,7 +10,7 @@ import {
   SidebarContent,
   SidebarInset,
   SidebarFooter,
-  SidebarRail, // Import SidebarRail
+  SidebarRail, 
 } from "@/components/ui/sidebar";
 import { SidebarNav } from "./sidebar-nav";
 import { Button } from "@/components/ui/button";
@@ -18,9 +19,9 @@ import Link from "next/link";
 
 export function MainLayout({ children }: PropsWithChildren) {
   return (
-    <SidebarProvider defaultOpen={true}> {/* Changed defaultOpen to true */}
-      <Sidebar collapsible="icon"> {/* Added collapsible="icon" */}
-        <SidebarRail /> {/* Added SidebarRail for desktop toggle */}
+    <SidebarProvider defaultOpen={true}> 
+      <Sidebar collapsible="icon"> 
+        <SidebarRail /> 
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
@@ -42,8 +43,8 @@ export function MainLayout({ children }: PropsWithChildren) {
       </Sidebar>
       <SidebarInset className="flex flex-col">
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-auto sm:border-0 sm:bg-transparent sm:px-6 sm:py-4">
-            {/* Mobile Trigger for Sidebar */}
-            <div className="md:hidden">
+            {/* Trigger for Sidebar (Mobile and Desktop) */}
+            <div> {/* Removed md:hidden class to make it visible on all screen sizes */}
                  <SidebarTrigger />
             </div>
            {/* Placeholder for potential top bar content */}
@@ -57,3 +58,4 @@ export function MainLayout({ children }: PropsWithChildren) {
     </SidebarProvider>
   );
 }
+
