@@ -1,3 +1,4 @@
+'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,29 +10,31 @@ interface Achievement {
   type: "Certificate" | "Award" | "Recognition";
   date: string;
   issuer?: string;
+  documenturl?: string;
 }
 
 const achievements: Achievement[] = [
   {
     id: "1",
     title: "Top Performer - CAD Design Competition",
-    type: "Award",
+    type: "Certificate",
     date: "May 2023",
-    issuer: "IIT Kharagpur, Civil Engineering Dept."
+    issuer: "IIT Kharagpur, Civil Engineering Dept.",
+    documenturl: "/certificate_(1).pdf",
   },
   {
     id: "2",
     title: "Certificate of Participation - National Tech Symposium",
     type: "Certificate",
     date: "March 2023",
-    issuer: "TechCon India"
+    issuer: "TechCon India",
   },
   {
     id: "3",
     title: "Dean's List for Academic Excellence",
     type: "Recognition",
     date: "Semester 4, 2022-2023",
-    issuer: "IIT Kharagpur"
+    issuer: "IIT Kharagpur",
   },
 ];
 
@@ -89,13 +92,26 @@ export default function AchievementsPage() {
                   </p>
                   <p className="text-xs text-muted-foreground">Date: {achievement.date}</p>
                 </div>
-                <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary/10">View (Mock)</Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary text-primary hover:bg-primary/10"
+                  onClick={() => {
+                    if (achievement.documenturl) {
+                      window.open(achievement.documenturl, "_blank");
+                    } else {
+                      alert("No document available for this achievement.");
+                    }
+                  }}
+                >
+                  View
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
       )}
-       <p className="mt-8 text-center text-muted-foreground">
+      <p className="mt-8 text-center text-muted-foreground">
         Showing {achievements.length} of potentially 50 items.
       </p>
     </div>
