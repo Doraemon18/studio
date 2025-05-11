@@ -43,7 +43,7 @@ export default function HomePage() {
                     Instagram
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+                <Button asChild size="lg" className="bg-linkedin text-primary-foreground hover:bg-linkedin/90 border-linkedin">
                   <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn

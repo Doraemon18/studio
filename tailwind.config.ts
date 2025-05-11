@@ -60,7 +60,8 @@ export default {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-        instagram: 'hsl(var(--instagram))', // Added Instagram color
+        instagram: 'hsl(var(--instagram))',
+        linkedin: 'hsl(var(--linkedin))', // Added LinkedIn color
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

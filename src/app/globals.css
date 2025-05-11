@@ -46,6 +46,7 @@ body {
 
     /* Brand Colors */
     --instagram: 343 76% 53%; /* Instagram Pink/Magenta */
+    --linkedin: 211 100% 45%; /* LinkedIn Blue */
   }
 
   .dark {
@@ -86,6 +87,7 @@ body {
 
     /* Brand Colors */
     --instagram: 343 76% 53%; /* Instagram Pink/Magenta - kept same for dark mode, adjust if needed */
+    --linkedin: 211 100% 45%; /* LinkedIn Blue */
   }
 }
 
