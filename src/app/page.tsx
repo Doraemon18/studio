@@ -44,7 +44,7 @@ export default function HomePage() {
               <div className="w-full md:w-2/3 lg:w-full flex justify-center items-center p-4 md:p-0 mx-auto lg:mx-0">
                 <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105">
                   <Image
-                    src="/IMG_20250331_184756.jpg"
+                    src="/profile-picture.jpg"
                     alt="Ranvir Kumar"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -59,35 +59,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Quick Links/Overview Section */}
-        <section className="w-full py-12 md:py-24 lg:py-20 border-t">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center mb-10 sm:text-4xl text-primary">Explore My Profile</h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { title: "Projects", description: "View my technical and academic projects.", href: "/projects", icon: Briefcase },
-                { title: "Skills", description: "Discover my technical and soft skills.", href: "/skills", icon: Lightbulb },
-                { title: "Achievements", description: "See my awards and certifications.", href: "/achievements", icon: Award },
-                { title: "Participation", description: "My involvement in various activities.", href: "/participation", icon: Users },
-              ].map((item) => (
-                <Card key={item.title} className="shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                  <CardHeader className="flex flex-row items-center justify-between pb-2">
-                    <CardTitle className="text-lg font-semibold text-primary">{item.title}</CardTitle>
-                    <item.icon className="w-6 h-6 text-accent" />
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm mb-4">{item.description}</CardDescription>
-                    <Button asChild variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary/10">
-                      <Link href={item.href}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Quick Links/Overview Section - REMOVED AS PER USER REQUEST */}
         
       </main>
 
@@ -109,3 +81,4 @@ export default function HomePage() {
     </div>
   );
 }
+
