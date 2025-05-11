@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ListChecks, Trophy, Laptop, Users, Lightbulb, Car } from "lucide-react"; // Example icons, added Car for Road Safety
 import { cn } from "@/lib/utils";
@@ -70,8 +69,8 @@ export default function ParticipationPage() {
               </div>
               <CardDescription className={cn(
                 "text-sm px-2 py-1 rounded-full inline-block bg-accent/20", // Common styles including background
-                item.category === "Sports" || item.category === "Tech" || item.category === "Quizzes"
-                  ? "font-bold text-foreground" // For "Sports", "Tech", or "Quizzes": bold, dark black text
+                item.category === "Sports" || item.category === "Tech" || item.category === "Quizzes" || item.category === "Hackathons"
+                  ? "font-bold text-foreground" // For "Sports", "Tech", "Quizzes", or "Hackathons": bold, dark black text
                   : "font-medium text-accent-foreground/80" // Original style for others
               )}>
                 {item.category}
@@ -89,4 +88,3 @@ export default function ParticipationPage() {
     </div>
   );
 }
-
