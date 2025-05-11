@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, PlusCircle } from "lucide-react"; // Removed UploadCloud as the section is removed
+import { FileText } from "lucide-react";
 
 interface Achievement {
   id: string;
@@ -52,17 +52,12 @@ export default function AchievementsPage() {
     <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <h1 className="text-4xl font-bold text-primary">Certificates & Achievements</h1>
-        <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-          <PlusCircle className="mr-2 h-5 w-5" />
-          Add New (Mock)
-        </Button>
+        {/* Removed "Add New (Mock)" button */}
       </div>
-
-      {/* Removed the upload card section */}
 
       <h2 className="text-2xl font-semibold mb-6">My Collection</h2>
       {achievements.length === 0 ? (
-        <p className="text-muted-foreground">No achievements added yet. Click "Add New" to start!</p>
+        <p className="text-muted-foreground">No achievements added yet.</p>
       ) : (
         <div className="space-y-4">
           {achievements.map((achievement) => (
