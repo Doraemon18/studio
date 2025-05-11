@@ -20,7 +20,7 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "2",
-    title: "Intra-IIT Tennis Competition",
+    title: "Intra-Hall Tennis Competition",
     category: "Sports",
     description: "Participated in singles and doubles tennis matches.",
     icon: Trophy 
@@ -41,10 +41,10 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "5",
-    title: "Road Safety Hackathon", // Updated title
+    title: "Road Safety Hackathon",
     category: "Hackathons",
-    description: "Developed a prototype for a social impact project focusing on road safety within 24 hours.", // Updated description to match
-    icon: Car // Changed icon to Car for relevance
+    description: "Developed a prototype for a social impact project focusing on road safety within 24 hours.",
+    icon: Car
   },
   {
     id: "6",
