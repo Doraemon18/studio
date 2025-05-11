@@ -41,9 +41,9 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "5",
-    title: "Road Safety Hackathon", //Kshitij Tech Hackathon -> Road Safety Hackathon (as per previous request, keeping it consistent)
+    title: "Road Safety Hackathon", 
     category: "Hackathons",
-    description: "Developed a prototype for a social impact project focusing on road safety within 24 hours.",
+    description: "Participating Road Safety Hackathon organises by Indian Government",
     icon: Car 
   },
   {
