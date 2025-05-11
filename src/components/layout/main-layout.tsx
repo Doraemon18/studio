@@ -5,16 +5,16 @@ import {
   SidebarProvider,
   Sidebar,
   SidebarHeader,
-  // SidebarTrigger, // No longer using the standalone trigger in the main app bar
+  SidebarTrigger, // Import SidebarTrigger for the main app bar
   SidebarContent,
   SidebarInset,
   SidebarFooter,
-  SidebarRail,
-  useSidebar, // Import useSidebar to access sidebar state
+  // SidebarRail, // No longer needed for offcanvas
+  useSidebar, 
 } from "@/components/ui/sidebar";
 import { SidebarNav } from "./sidebar-nav";
-import { Button } from "@/components/ui/button"; // Import Button for the new toggle
-import { Menu, X, LayoutDashboard } from "lucide-react"; // Import Menu, X, and LayoutDashboard icons
+import { Button } from "@/components/ui/button"; 
+import { Menu, X, LayoutDashboard } from "lucide-react"; 
 import Link from "next/link";
 
 // Inner component to consume sidebar context, as hooks must be called within Provider's children
@@ -26,17 +26,19 @@ const LayoutContent = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <Sidebar collapsible="icon">
-        <SidebarRail />
+      <Sidebar collapsible="offcanvas"> {/* Changed from "icon" to "offcanvas" */}
+        {/* <SidebarRail /> Removed as it's for icon mode */}
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 font-semibold text-lg text-sidebar-primary hover:text-sidebar-primary/80">
               <LayoutDashboard className="h-5 w-5 flex-shrink-0" />
-              <span className="group-data-[collapsible=icon]:hidden">
+              {/* The span with group-data-[collapsible=icon]:hidden will naturally be visible as data-collapsible won't be 'icon' */}
+              <span> 
                 Ranvir's Portfolio
               </span>
             </Link>
-            {/* Toggle button inside SidebarHeader: shows X if open, Menu if closed */}
+            {/* Toggle button inside SidebarHeader: shows X if open, Menu if closed (but sidebar is offscreen when closed) */}
+            {/* This button primarily acts as the 'Close' (X) button now */}
             <Button
               variant="ghost"
               size="icon"
@@ -53,15 +55,13 @@ const LayoutContent = ({ children }: PropsWithChildren) => {
         </SidebarContent>
         <SidebarFooter className="p-4 mt-auto">
           {/* Optional: Add a footer item like logout if needed in future */}
-          {/* <Button variant="ghost" className="w-full justify-start">
-            <LogOut className="mr-2 h-4 w-4" />
-            Log Out
-          </Button> */}
         </SidebarFooter>
       </Sidebar>
       <SidebarInset className="flex flex-col">
-        {/* Header in main content area - SidebarTrigger removed from here */}
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-auto sm:border-0 sm:bg-transparent sm:px-6 sm:py-4">
+           {/* Add SidebarTrigger here to open the sidebar when it's offcanvas */}
+           {/* This trigger will show a Menu icon and will be responsible for opening the sidebar */}
+           <SidebarTrigger />
            <div className="flex-grow"></div>
            {/* Optional: User Menu / Settings */}
         </header>
@@ -76,7 +76,9 @@ const LayoutContent = ({ children }: PropsWithChildren) => {
 export function MainLayout({ children }: PropsWithChildren) {
   return (
     // defaultOpen={true} makes the sidebar expanded by default on desktop
-    <SidebarProvider defaultOpen={true}>
+    // For offcanvas, perhaps defaultOpen should be false, but user can control via cookie.
+    // Keeping defaultOpen={true} for now, or let cookie manage it.
+    <SidebarProvider defaultOpen={true}> 
       <LayoutContent>{children}</LayoutContent>
     </SidebarProvider>
   );
