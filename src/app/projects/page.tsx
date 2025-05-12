@@ -1,7 +1,9 @@
 
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"; // Added Button import
+import { Button } from "@/components/ui/button"; 
 
 interface Project {
   id: string;
@@ -10,7 +12,7 @@ interface Project {
   imageUrl?: string;
   imageHint?: string;
   details?: string[];
-  viewUrl?: string; // Optional: Add a URL for the view button
+  viewUrl?: string; 
 }
 
 const projects: Project[] = [
@@ -25,7 +27,7 @@ const projects: Project[] = [
       "Key Features: Parametric modeling, detailed component creation, site planning.",
       "Outcome: A realistic and scalable 3D representation of a school facility."
     ],
-    viewUrl: "#", // Placeholder URL
+    viewUrl: "#", 
   },
   {
     id: "2",
@@ -37,7 +39,7 @@ const projects: Project[] = [
       "Focus Areas: Green roofs, permeable pavements, retention ponds.",
       "Tools: AutoCAD for initial layouts, manual calculations for flow rates."
     ],
-    viewUrl: "#", // Placeholder URL
+    viewUrl: "#", 
   },
   {
     id: "3",
@@ -49,11 +51,17 @@ const projects: Project[] = [
       "Technologies: Next.js, React, TypeScript, Tailwind CSS, ShadCN UI.",
       "Features: Responsive design, component-based architecture, dynamic content sections."
     ],
-    viewUrl: "#", // Placeholder URL
+    viewUrl: "#", 
   },
 ];
 
 export default function ProjectsPage() {
+  const handleViewClick = (url?: string) => {
+    if (url && url !== "#") {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-4xl font-bold mb-8 text-primary">Project Portfolio</h1>
@@ -88,12 +96,12 @@ export default function ProjectsPage() {
                   </div>
                 )}
               </div>
-              <div className="mt-auto"> {/* This div with mt-auto will be pushed to the bottom */}
+              <div className="mt-auto self-start"> 
                 <Button
                   variant="outline"
                   size="sm"
                   className="border-primary text-primary hover:bg-primary/10"
-                  onClick={() => project.viewUrl && project.viewUrl !== "#" && window.open(project.viewUrl, "_blank")}
+                  onClick={() => handleViewClick(project.viewUrl)}
                   disabled={!project.viewUrl || project.viewUrl === "#"}
                 >
                   View
