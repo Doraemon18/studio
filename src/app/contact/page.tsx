@@ -66,7 +66,7 @@ export default function ContactPage() {
           <CardTitle className="text-2xl font-semibold text-primary-foreground">Contact Information</CardTitle>
           <CardDescription className="text-primary-foreground/80">Feel free to reach out through any of these channels.</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 bg-black"> {/* Added bg-black here */}
           {contactDetails.map((detail) => (
             <div key={detail.id} className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:space-x-4 p-4 rounded-lg border border-muted bg-card hover:bg-muted/50 transition-colors">
               <detail.icon className={`${detail.iconColorClass} h-8 w-8 mt-1 sm:mt-0 flex-shrink-0`} />
