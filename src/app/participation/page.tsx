@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ListChecks, Trophy, Laptop, Users, Lightbulb, Car } from "lucide-react"; // Example icons, added Car for Road Safety
 import { cn } from "@/lib/utils";
@@ -27,10 +28,10 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "3",
-    title: "Web Development Workshop",
-    category: "Tech",
-    description: "Attended a 3-day workshop on modern web technologies.",
-    icon: Laptop
+    title: "NSO HOCKEY PLAYER",
+    category: "Sports", // Changed from Tech to Sports
+    description: "Active member of the NSO Hockey team, representing IIT Kharagpur.", // Updated description
+    icon: Trophy // Changed from Users to Trophy
   },
   {
     id: "4",
@@ -48,19 +49,30 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "6",
-    title: "Robotics Club Member",
-    category: "Tech",
-    description: "Active member, contributing to various robotics projects and competitions.",
-    icon: Users
+    title: "NSO HOCKEY PLAYER", // Updated title
+    category: "Sports", // Updated category
+    description: "Represented IIT Kharagpur as part of the NSO Hockey team in various tournaments.", // Updated description
+    icon: Trophy // Updated icon
   }
 ];
 
 export default function ParticipationPage() {
+  // Filter out duplicate entries by title before rendering
+  const uniqueParticipationItems = participationItems.reduce((acc, current) => {
+    const x = acc.find(item => item.title === current.title && item.category === current.category);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, [] as ParticipationItem[]);
+
+
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-4xl font-bold mb-8 text-primary">My Participations</h1>
       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {participationItems.map((item) => (
+        {uniqueParticipationItems.map((item) => (
           <Card key={item.id} className="shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
             <CardHeader className="flex-shrink-0">
               <div className="flex items-center mb-2">
