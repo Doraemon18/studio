@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
+import type React from "react";
 
 interface ContactDetail {
   id: string;
@@ -12,7 +13,7 @@ interface ContactDetail {
   href?: string;
   icon: React.ElementType;
   actionText?: string;
-  iconColorClass: string;
+  iconColorClass?: string; // Optional as WhatsApp icon has its own color
   buttonClass?: string;
 }
 
@@ -36,17 +37,18 @@ const contactDetails: ContactDetail[] = [
     href: "tel:+919471892601",
     icon: Phone,
     actionText: "Call Now",
-    iconColorClass: "text-primary-foreground", // Kept as primary-foreground as per previous settings
+    iconColorClass: "text-primary-foreground", 
     buttonClass: newButtonClass,
   },
   {
     id: "whatsapp",
     label: "WhatsApp",
     value: "+91 9199693802",
-    href: "https://wa.me/919199693802", // Standard WhatsApp link
-    icon: WhatsappIcon, // Using custom WhatsApp icon
+    href: "https://wa.me/919199693802", 
+    icon: WhatsappIcon, 
     actionText: "Message on WhatsApp",
-    iconColorClass: "text-whatsapp", // Specific color for WhatsApp icon
+    // iconColorClass is not strictly needed as WhatsappIcon has its own color,
+    // but className will still be passed. We ensure size/color classes aren't applied.
     buttonClass: newButtonClass,
   },
   {
@@ -54,8 +56,7 @@ const contactDetails: ContactDetail[] = [
     label: "Current Location",
     value: "Kharagpur, West Bengal, India",
     icon: MapPin,
-    iconColorClass: "text-primary-foreground", // Kept as primary-foreground
-    // No direct action for location unless it's a map link
+    iconColorClass: "text-primary-foreground",
   },
 ];
 
@@ -74,7 +75,13 @@ export default function ContactPage() {
               key={detail.id} 
               className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:space-x-4 p-4 rounded-lg border border-neutral-700 bg-neutral-800 hover:bg-neutral-700/80 transition-colors"
             >
-              <detail.icon className={`${detail.iconColorClass} h-8 w-8 mt-1 sm:mt-0 flex-shrink-0`} />
+              <detail.icon 
+                className={
+                  detail.id === "whatsapp" 
+                  ? "mt-1 sm:mt-0 flex-shrink-0" // For WhatsApp, only apply layout classes
+                  : `${detail.iconColorClass || ''} h-8 w-8 mt-1 sm:mt-0 flex-shrink-0` // For others, apply color and size
+                } 
+              />
               <div className="flex-grow">
                 <h3 className="text-lg font-medium text-primary-foreground">{detail.label}</h3>
                 <p className="text-primary-foreground/80">{detail.value}</p>
