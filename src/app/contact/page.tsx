@@ -1,9 +1,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
+import { GmailIcon } from "@/components/icons/gmail-icon"; // Import GmailIcon
 import type React from "react";
 
 interface ContactDetail {
@@ -13,7 +14,7 @@ interface ContactDetail {
   href?: string;
   icon: React.ElementType;
   actionText?: string;
-  iconColorClass?: string; // Optional as WhatsApp icon has its own color
+  iconColorClass?: string; 
   buttonClass?: string;
 }
 
@@ -25,9 +26,9 @@ const contactDetails: ContactDetail[] = [
     label: "Email Address",
     value: "ranvirbusiness32@gmail.com",
     href: "mailto:ranvirbusiness32@gmail.com",
-    icon: Mail,
+    icon: GmailIcon, // Use GmailIcon
     actionText: "Send Email",
-    iconColorClass: "text-[hsl(var(--email))]",
+    // iconColorClass: "text-[hsl(var(--email))]", // GmailIcon has its own color
     buttonClass: newButtonClass,
   },
   {
@@ -47,8 +48,6 @@ const contactDetails: ContactDetail[] = [
     href: "https://wa.me/919199693802", 
     icon: WhatsappIcon, 
     actionText: "Message on WhatsApp",
-    // iconColorClass is not strictly needed as WhatsappIcon has its own color,
-    // but className will still be passed. We ensure size/color classes aren't applied.
     buttonClass: newButtonClass,
   },
   {
@@ -77,8 +76,8 @@ export default function ContactPage() {
             >
               <detail.icon 
                 className={
-                  detail.id === "whatsapp" 
-                  ? "mt-1 sm:mt-0 flex-shrink-0" // For WhatsApp, only apply layout classes
+                  detail.id === "whatsapp" || detail.id === "email"
+                  ? "mt-1 sm:mt-0 flex-shrink-0" // For WhatsApp & Gmail, only apply layout classes
                   : `${detail.iconColorClass || ''} h-8 w-8 mt-1 sm:mt-0 flex-shrink-0` // For others, apply color and size
                 } 
               />
