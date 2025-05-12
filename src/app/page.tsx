@@ -7,10 +7,10 @@ import { TwitterIcon } from '@/components/icons/twitter-icon'; // Import Twitter
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-background via-background to-background dark:from-primary/5 dark:via-background dark:to-background">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-background via-muted to-background dark:from-primary/5 dark:via-background dark:to-background">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
               {/* Profile Picture Section: Changed to square shape */}
@@ -49,7 +49,7 @@ export default function HomePage() {
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--twitter))' }}>
-                    <Link href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"> {/* Replace with actual Twitter link */}
+                    <Link href="https://x.com/Ranvir_kgpian" target="_blank" rel="noopener noreferrer">
                       <TwitterIcon className="mr-2 h-5 w-5" /> Twitter
                     </Link>
                   </Button>
@@ -78,7 +78,7 @@ export default function HomePage() {
             <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" passHref target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
-            <Link href="https://twitter.com/yourprofile" passHref target="_blank" rel="noopener noreferrer" aria-label="Twitter"> {/* Replace with actual Twitter link */}
+            <Link href="https://x.com/Ranvir_kgpian" passHref target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                <TwitterIcon className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </div>
@@ -87,4 +87,3 @@ export default function HomePage() {
     </div>
   );
 }
-
