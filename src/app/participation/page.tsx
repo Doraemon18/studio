@@ -29,9 +29,9 @@ const participationItems: ParticipationItem[] = [
   {
     id: "3",
     title: "NSO HOCKEY PLAYER",
-    category: "Sports", // Changed from Tech to Sports
-    description: "Active member of the NSO Hockey team, representing IIT Kharagpur.", // Updated description
-    icon: Trophy // Changed from Users to Trophy
+    category: "Sports", 
+    description: "Member of the NSO Hockey team for two years", 
+    icon: Trophy 
   },
   {
     id: "4",
@@ -49,17 +49,17 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "6",
-    title: "NSO HOCKEY PLAYER", // Updated title
-    category: "Sports", // Updated category
-    description: "Represented IIT Kharagpur as part of the NSO Hockey team in various tournaments.", // Updated description
-    icon: Trophy // Updated icon
+    title: "NSO HOCKEY PLAYER", 
+    category: "Sports", 
+    description: "Represented IIT Kharagpur as part of the NSO Hockey team in various tournaments.", 
+    icon: Trophy 
   }
 ];
 
 export default function ParticipationPage() {
   // Filter out duplicate entries by title before rendering
   const uniqueParticipationItems = participationItems.reduce((acc, current) => {
-    const x = acc.find(item => item.title === current.title && item.category === current.category);
+    const x = acc.find(item => item.title === current.title && item.category === current.category && item.description === current.description);
     if (!x) {
       return acc.concat([current]);
     } else {
@@ -100,3 +100,4 @@ export default function ParticipationPage() {
     </div>
   );
 }
+
