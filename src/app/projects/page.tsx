@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
+import { Button } from "@/components/ui/button"; // Added Button import
 
 interface Project {
   id: string;
@@ -9,6 +10,7 @@ interface Project {
   imageUrl?: string;
   imageHint?: string;
   details?: string[];
+  viewUrl?: string; // Optional: Add a URL for the view button
 }
 
 const projects: Project[] = [
@@ -22,7 +24,8 @@ const projects: Project[] = [
       "Software Used: Autodesk Revit 2022",
       "Key Features: Parametric modeling, detailed component creation, site planning.",
       "Outcome: A realistic and scalable 3D representation of a school facility."
-    ]
+    ],
+    viewUrl: "#", // Placeholder URL
   },
   {
     id: "2",
@@ -33,7 +36,8 @@ const projects: Project[] = [
     details: [
       "Focus Areas: Green roofs, permeable pavements, retention ponds.",
       "Tools: AutoCAD for initial layouts, manual calculations for flow rates."
-    ]
+    ],
+    viewUrl: "#", // Placeholder URL
   },
   {
     id: "3",
@@ -44,7 +48,8 @@ const projects: Project[] = [
     details: [
       "Technologies: Next.js, React, TypeScript, Tailwind CSS, ShadCN UI.",
       "Features: Responsive design, component-based architecture, dynamic content sections."
-    ]
+    ],
+    viewUrl: "#", // Placeholder URL
   },
 ];
 
@@ -54,9 +59,9 @@ export default function ProjectsPage() {
       <h1 className="text-4xl font-bold mb-8 text-primary">Project Portfolio</h1>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-1">
         {projects.map((project) => (
-          <Card key={project.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <Card key={project.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
             {project.imageUrl && (
-              <div className="relative w-full h-64">
+              <div className="relative w-full h-64 flex-shrink-0">
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
@@ -66,21 +71,34 @@ export default function ProjectsPage() {
                 />
               </div>
             )}
-            <CardHeader className="p-6">
+            <CardHeader className="p-6 flex-shrink-0">
               <CardTitle className="text-2xl font-semibold text-primary">{project.title}</CardTitle>
             </CardHeader>
-            <CardContent className="p-6 pt-0">
-              <CardDescription className="text-base mb-4">{project.description}</CardDescription>
-              {project.details && project.details.length > 0 && (
-                <div>
-                  <h4 className="font-semibold mb-2">Details:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                    {project.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <CardContent className="p-6 pt-0 flex flex-col flex-grow">
+              <div className="flex-grow">
+                <CardDescription className="text-base mb-4">{project.description}</CardDescription>
+                {project.details && project.details.length > 0 && (
+                  <div className="mb-4">
+                    <h4 className="font-semibold mb-2">Details:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                      {project.details.map((detail, index) => (
+                        <li key={index}>{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div className="mt-auto"> {/* This div with mt-auto will be pushed to the bottom */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary text-primary hover:bg-primary/10"
+                  onClick={() => project.viewUrl && project.viewUrl !== "#" && window.open(project.viewUrl, "_blank")}
+                  disabled={!project.viewUrl || project.viewUrl === "#"}
+                >
+                  View
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}
