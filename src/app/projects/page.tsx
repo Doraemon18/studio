@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"; 
+import { Button } from "@/components/ui/button";
 
 interface Project {
   id: string;
@@ -12,7 +12,7 @@ interface Project {
   imageUrl?: string;
   imageHint?: string;
   details?: string[];
-  viewUrl?: string; 
+  viewUrls?: string[]; // Changed from viewUrl to viewUrls for multiple files
 }
 
 const projects: Project[] = [
@@ -20,14 +20,18 @@ const projects: Project[] = [
     id: "1",
     title: "3-D School Model using Revit Software",
     description: "Developed a comprehensive 3D architectural model of a school campus utilizing Autodesk Revit. This project involved detailed modeling of structures, interiors, and site layout.",
-    imageUrl: "/Picture1.png",
+    imageUrl: "/IMAGES/Picture12.png",
     imageHint: "architecture 3d model",
     details: [
       "Software Used: Autodesk Revit 2022",
       "Key Features: Parametric modeling, detailed component creation, site planning.",
       "Outcome: A realistic and scalable 3D representation of a school facility."
     ],
-    viewUrl: "#", 
+    viewUrls: [
+      "/IMAGES/Picture11.png",
+      "/IMAGES/Picture2.png",
+      "/IMAGES/Picture3.png"
+    ],
   },
   {
     id: "2",
@@ -39,7 +43,7 @@ const projects: Project[] = [
       "Focus Areas: Green roofs, permeable pavements, retention ponds.",
       "Tools: AutoCAD for initial layouts, manual calculations for flow rates."
     ],
-    viewUrl: "#", 
+    viewUrls: ["#"],
   },
   {
     id: "3",
@@ -51,13 +55,14 @@ const projects: Project[] = [
       "Technologies: Next.js, React, TypeScript, Tailwind CSS, ShadCN UI.",
       "Features: Responsive design, component-based architecture, dynamic content sections."
     ],
-    viewUrl: "#", 
+    viewUrls: ["#"],
   },
 ];
 
 export default function ProjectsPage() {
-  const handleViewClick = (url?: string) => {
-    if (url && url !== "#") {
+  const handleViewClick = (urls?: string[]) => {
+    if (!urls || urls.length === 0 || urls[0] === "#") return;
+    for (const url of urls) {
       window.open(url, "_blank");
     }
   };
@@ -74,7 +79,7 @@ export default function ProjectsPage() {
                   src={project.imageUrl}
                   alt={project.title}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  className="object-cover"
                   data-ai-hint={project.imageHint || "project image"}
                 />
               </div>
@@ -85,7 +90,7 @@ export default function ProjectsPage() {
             <CardContent className="p-6 pt-0 flex flex-col flex-grow">
               <div className="flex-grow">
                 <CardDescription className="text-base mb-4">{project.description}</CardDescription>
-                {project.details && project.details.length > 0 && (
+                {project.details?.length > 0 && (
                   <div className="mb-4">
                     <h4 className="font-semibold mb-2">Details:</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
@@ -96,13 +101,13 @@ export default function ProjectsPage() {
                   </div>
                 )}
               </div>
-              <div className="mt-auto self-start"> 
+              <div className="mt-auto self-start">
                 <Button
                   variant="outline"
                   size="sm"
                   className="border-primary text-primary hover:bg-primary/10"
-                  onClick={() => handleViewClick(project.viewUrl)}
-                  disabled={!project.viewUrl || project.viewUrl === "#"}
+                  onClick={() => handleViewClick(project.viewUrls)}
+                  disabled={!project.viewUrls || project.viewUrls[0] === "#"}
                 >
                   View
                 </Button>
