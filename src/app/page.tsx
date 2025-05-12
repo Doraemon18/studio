@@ -66,20 +66,20 @@ export default function HomePage() {
         
       </main>
 
-      <footer className="py-6 md:py-8 border-t bg-background">
+      <footer className="py-6 md:py-8 border-t bg-black">
         <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-red-500">
             &copy; {new Date().getFullYear()} Ranvir Kumar. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" passHref target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-               <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+               <Linkedin className="h-6 w-6 text-linkedin hover:opacity-80 transition-opacity" />
             </Link>
             <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" passHref target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-               <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+               <Instagram className="h-6 w-6 text-instagram hover:opacity-80 transition-opacity" />
             </Link>
             <Link href="https://x.com/Ranvir_kgpian" passHref target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-               <TwitterIcon className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+               <TwitterIcon className="h-6 w-6 text-twitter hover:opacity-80 transition-opacity" />
             </Link>
           </div>
         </div>
@@ -87,4 +87,3 @@ export default function HomePage() {
     </div>
   );
 }
-
