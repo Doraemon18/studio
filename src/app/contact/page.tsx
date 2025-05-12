@@ -36,7 +36,7 @@ const contactDetails: ContactDetail[] = [
     href: "tel:+919471892601",
     icon: Phone,
     actionText: "Call Now",
-    iconColorClass: "text-primary-foreground",
+    iconColorClass: "text-primary-foreground", // Kept as primary-foreground as per previous settings
     buttonClass: newButtonClass,
   },
   {
@@ -46,7 +46,7 @@ const contactDetails: ContactDetail[] = [
     href: "https://wa.me/919199693802", // Standard WhatsApp link
     icon: WhatsappIcon, // Using custom WhatsApp icon
     actionText: "Message on WhatsApp",
-    iconColorClass: "text-whatsapp",
+    iconColorClass: "text-whatsapp", // Specific color for WhatsApp icon
     buttonClass: newButtonClass,
   },
   {
@@ -54,17 +54,17 @@ const contactDetails: ContactDetail[] = [
     label: "Current Location",
     value: "Kharagpur, West Bengal, India",
     icon: MapPin,
-    iconColorClass: "text-primary-foreground",
+    iconColorClass: "text-primary-foreground", // Kept as primary-foreground
     // No direct action for location unless it's a map link
   },
 ];
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto py-8 px-4 max-w-2xl bg-black text-primary-foreground">
+    <div className="container mx-auto py-8 px-4 max-w-2xl bg-black text-primary-foreground rounded-lg shadow-2xl">
       <h1 className="text-4xl font-bold mb-8 text-primary-foreground text-center">Get In Touch</h1>
-      <Card className="shadow-lg bg-card border-muted">
-        <CardHeader className="text-center bg-neutral-900">
+      <Card className="shadow-lg bg-neutral-900 border-neutral-700 rounded-lg overflow-hidden">
+        <CardHeader className="text-center bg-neutral-800 p-6">
           <CardTitle className="text-2xl font-semibold text-primary-foreground">Contact Information</CardTitle>
           <CardDescription className="text-primary-foreground/80">Feel free to reach out through any of these channels.</CardDescription>
         </CardHeader>
