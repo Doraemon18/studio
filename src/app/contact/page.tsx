@@ -16,6 +16,8 @@ interface ContactDetail {
   buttonClass?: string;
 }
 
+const newButtonClass = "bg-neutral-700 text-neutral-100 border-neutral-600 hover:bg-neutral-600 hover:text-white";
+
 const contactDetails: ContactDetail[] = [
   {
     id: "email",
@@ -25,7 +27,7 @@ const contactDetails: ContactDetail[] = [
     icon: Mail,
     actionText: "Send Email",
     iconColorClass: "text-[hsl(var(--email))]",
-    buttonClass: "border-[hsl(var(--email))] text-[hsl(var(--email))] hover:bg-[hsl(var(--email))]/10 hover:text-[hsl(var(--email))]",
+    buttonClass: newButtonClass,
   },
   {
     id: "phone",
@@ -35,7 +37,7 @@ const contactDetails: ContactDetail[] = [
     icon: Phone,
     actionText: "Call Now",
     iconColorClass: "text-primary-foreground",
-    buttonClass: "border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground",
+    buttonClass: newButtonClass,
   },
   {
     id: "whatsapp",
@@ -45,7 +47,7 @@ const contactDetails: ContactDetail[] = [
     icon: WhatsappIcon, // Using custom WhatsApp icon
     actionText: "Message on WhatsApp",
     iconColorClass: "text-whatsapp",
-    buttonClass: "border-whatsapp text-whatsapp hover:bg-whatsapp/10 hover:text-whatsapp",
+    buttonClass: newButtonClass,
   },
   {
     id: "location",
@@ -62,15 +64,15 @@ export default function ContactPage() {
     <div className="container mx-auto py-8 px-4 max-w-2xl bg-black text-primary-foreground">
       <h1 className="text-4xl font-bold mb-8 text-primary-foreground text-center">Get In Touch</h1>
       <Card className="shadow-lg bg-card border-muted">
-        <CardHeader className="text-center bg-black">
+        <CardHeader className="text-center bg-neutral-900">
           <CardTitle className="text-2xl font-semibold text-primary-foreground">Contact Information</CardTitle>
           <CardDescription className="text-primary-foreground/80">Feel free to reach out through any of these channels.</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6 bg-black">
+        <CardContent className="space-y-6 bg-neutral-900 p-6 pt-6">
           {contactDetails.map((detail) => (
             <div 
               key={detail.id} 
-              className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:space-x-4 p-4 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 transition-colors"
+              className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:space-x-4 p-4 rounded-lg border border-neutral-700 bg-neutral-800 hover:bg-neutral-700/80 transition-colors"
             >
               <detail.icon className={`${detail.iconColorClass} h-8 w-8 mt-1 sm:mt-0 flex-shrink-0`} />
               <div className="flex-grow">
