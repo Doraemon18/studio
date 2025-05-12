@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-background">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-background via-muted to-background dark:from-primary/5 dark:via-background dark:to-background">
+        <section className="w-full py-6 md:py-10 lg:py-14 xl:py-20 bg-gradient-to-r from-background via-muted to-background dark:from-primary/5 dark:via-background dark:to-background">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
               {/* Profile Picture Section: Changed to square shape */}
@@ -87,3 +87,4 @@ export default function HomePage() {
     </div>
   );
 }
+
