@@ -85,7 +85,6 @@ export default function ProjectsPage() {
           </Card>
         ))}
       </div>
-      <p className="mt-12 text-center text-muted-foreground">More projects coming soon...</p>
     </div>
   );
 }
