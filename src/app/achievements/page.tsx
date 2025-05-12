@@ -52,19 +52,17 @@ export default function AchievementsPage() {
     <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <h1 className="text-4xl font-bold text-primary">Certificates & Achievements</h1>
-        {/* Removed "Add New (Mock)" button */}
       </div>
 
-      {/* <h2 className="text-2xl font-semibold mb-6">My Collection</h2> Removed this line */}
       {achievements.length === 0 ? (
         <p className="text-muted-foreground">No achievements added yet.</p>
       ) : (
         <div className="space-y-4">
           {achievements.map((achievement) => (
             <Card key={achievement.id} className="shadow-md hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6 flex items-center space-x-4">
-                <FileText className="h-10 w-10 text-primary flex-shrink-0" />
-                <div className="flex-grow">
+              <CardContent className="p-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:space-x-4">
+                <FileText className="h-10 w-10 text-primary flex-shrink-0 self-center sm:self-auto" />
+                <div className="flex-grow w-full sm:w-auto">
                   <h3 className="text-lg font-semibold">{achievement.title}</h3>
                   <p className="text-sm text-muted-foreground">
                     {achievement.type} - Issued by: {achievement.issuer || "N/A"}
@@ -74,7 +72,7 @@ export default function AchievementsPage() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-primary text-primary hover:bg-primary/10"
+                  className="border-primary text-primary hover:bg-primary/10 w-full sm:w-auto sm:self-auto"
                   onClick={() => handleViewClick(achievement.documenturl)}
                 >
                   View
@@ -90,4 +88,3 @@ export default function AchievementsPage() {
     </div>
   );
 }
-
