@@ -62,7 +62,7 @@ export default function ContactPage() {
     <div className="container mx-auto py-8 px-4 max-w-2xl bg-black text-primary-foreground">
       <h1 className="text-4xl font-bold mb-8 text-primary-foreground text-center">Get In Touch</h1>
       <Card className="shadow-lg bg-card border-muted">
-        <CardHeader className="text-center">
+        <CardHeader className="text-center bg-black">
           <CardTitle className="text-2xl font-semibold text-primary-foreground">Contact Information</CardTitle>
           <CardDescription className="text-primary-foreground/80">Feel free to reach out through any of these channels.</CardDescription>
         </CardHeader>
@@ -88,3 +88,4 @@ export default function ContactPage() {
     </div>
   );
 }
+
