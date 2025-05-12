@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,7 +63,9 @@ export default {
   			},
         instagram: 'hsl(var(--instagram))',
         linkedin: 'hsl(var(--linkedin))', 
-        whatsapp: 'hsl(var(--whatsapp))', // Added WhatsApp color
+        whatsapp: 'hsl(var(--whatsapp))',
+        twitter: 'hsl(var(--twitter))', // Added Twitter color
+        email: 'hsl(var(--email))',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

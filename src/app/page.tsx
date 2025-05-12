@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Linkedin, Instagram } from 'lucide-react';
+import { TwitterIcon } from '@/components/icons/twitter-icon'; // Import TwitterIcon
 
 export default function HomePage() {
   return (
@@ -47,6 +48,11 @@ export default function HomePage() {
                       <Instagram className="mr-2 h-5 w-5" /> Instagram
                     </Link>
                   </Button>
+                  <Button asChild variant="outline" size="lg" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--twitter))' }}>
+                    <Link href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer"> {/* Replace with actual Twitter link */}
+                      <TwitterIcon className="mr-2 h-5 w-5" /> Twitter
+                    </Link>
+                  </Button>
                   <Button asChild variant="outline" size="lg" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--linkedin))' }}>
                     <Link href="https://www.linkedin.com/in/ranvir-kumar-862b4a284/" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
@@ -71,6 +77,9 @@ export default function HomePage() {
             </Link>
             <Link href="https://www.instagram.com/ranvir_kgpian/?__pwa=1#" passHref target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+            </Link>
+            <Link href="https://twitter.com/yourprofile" passHref target="_blank" rel="noopener noreferrer" aria-label="Twitter"> {/* Replace with actual Twitter link */}
+               <TwitterIcon className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
           </div>
         </div>
