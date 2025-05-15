@@ -39,7 +39,7 @@ const achievements: Achievement[] = [
   },
   {
     id: "3",
-    title: "Couse on cash flow",
+    title: "Course on cash flow",
     type: "Certificate",
     date: "15th MAY 2025",
     issuer: "HP FOUNDATION & HP LIFE",
