@@ -18,7 +18,7 @@ export default function HomePage() {
                 className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-lg overflow-hidden shadow-2xl border-4 border-primary/30 hover:border-primary/70 transition-all duration-300 transform hover:scale-105 mx-auto"
               >
                 <Image
-                  src="/IMG_20250331_184756.jpg" 
+                  src="/Picture1.png" 
                   alt="Ranvir Kumar"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -68,7 +68,7 @@ export default function HomePage() {
 
       <footer className="py-6 md:py-8 border-t bg-black">
         <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm text-red-500">
+          <p className="text-sm text-white font-bold">
             &copy; {new Date().getFullYear()} Ranvir Kumar. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
@@ -87,3 +87,4 @@ export default function HomePage() {
     </div>
   );
 }
+
