@@ -23,7 +23,7 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     id: "1",
-    title: "Effective Leadership",
+    title: "Course on effective leadership",
     type: "Certificate",
     date: "8th MAY 2025",
     issuer: "HP FOUNDATION & HP LIFE",
@@ -39,10 +39,11 @@ const achievements: Achievement[] = [
   },
   {
     id: "3",
-    title: "Dean's List for Academic Excellence",
-    type: "Recognition",
-    date: "Semester 4, 2022-2023",
-    issuer: "IIT Kharagpur",
+    title: "Couse on cash flow",
+    type: "Certificate",
+    date: "15th MAY 2025",
+    issuer: "HP FOUNDATION & HP LIFE",
+    documenturl: "/CASH_FLOW.pdf",
   },
 ];
 
