@@ -35,7 +35,7 @@ const participationItems: ParticipationItem[] = [
   },
   {
     id: "4",
-    title: "General Knowledge Quiz Finals",
+    title: "General Knowledge Quiz's",
     category: "Quizzes",
     description: "Participated Variety of Quizzes Competition.",
     icon: Lightbulb
@@ -100,4 +100,3 @@ export default function ParticipationPage() {
     </div>
   );
 }
-
