@@ -1,9 +1,10 @@
-
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import React from "react";
 
 interface Project {
   id: string;
@@ -12,7 +13,7 @@ interface Project {
   imageUrl?: string;
   imageHint?: string;
   details?: string[];
-  viewUrls?: string[]; // Changed from viewUrl to viewUrls for multiple files
+  viewUrls?: string[];
 }
 
 const projects: Project[] = [
@@ -35,15 +36,17 @@ const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Sustainable Urban Drainage System Design (Conceptual)",
-    description: "Conceptual design for a sustainable urban drainage system (SuDS) for a residential area, focusing on rainwater harvesting and flood mitigation.",
-    imageUrl: "https://picsum.photos/600/400",
-    imageHint: "urban planning water",
-    details: [
-      "Focus Areas: Green roofs, permeable pavements, retention ponds.",
-      "Tools: AutoCAD for initial layouts, manual calculations for flow rates."
+    title: "Financial Modelling & Valuation",
+    description: "Completed a course on Financial Modelling & Valuation covering Excel tools, P&L creation, DCF modeling, Pivot Tables, and a practical case study on Netflix valuation.",
+    imageUrl: "/871358_599e.webp",
+    imageHint: "Financial Modelling & Valuation",
+    details: [ 
+      "Focus Areas: Financial Modelling & Valuation Excel-based financial analysis, P&L creation, DCF modeling, and practical valuation case study (Netflix).",
+      "Project Link: https://drive.google.com/drive/folders/1MCOjr7ESOR5_zyATzisMj5Oj61o_D11R?usp=drive_link",
     ],
-    viewUrls: ["#"],
+    viewUrls: [
+      "/certificate_TD-RANV-FM-1838.pdf",
+    ],
   },
   {
     id: "3",
@@ -60,12 +63,12 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsPage() {
-  const handleViewClick = (urls?: string[]) => {
+  const handleViewClick = React.useCallback((urls?: string[]) => {
     if (!urls || urls.length === 0 || urls[0] === "#") return;
     for (const url of urls) {
       window.open(url, "_blank");
     }
-  };
+  }, []);
 
   return (
     <div className="container mx-auto py-8 px-4">
@@ -94,9 +97,25 @@ export default function ProjectsPage() {
                   <div className="mb-4">
                     <h4 className="font-semibold mb-2">Details:</h4>
                     <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                      {project.details.map((detail, index) => (
-                        <li key={index}>{detail}</li>
-                      ))}
+                      {project.details.map((detail, index) => {
+                        if (detail.startsWith("Project Link: ")) {
+                          const url = detail.substring("Project Link: ".length);
+                          return (
+                            <li key={index}>
+                              Project Link:{" "}
+                              <Link
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:underline"
+                              >
+                                Open Project Folder
+                              </Link>
+                            </li>
+                          );
+                        }
+                        return <li key={index}>{detail}</li>;
+                      })}
                     </ul>
                   </div>
                 )}
@@ -107,7 +126,7 @@ export default function ProjectsPage() {
                   size="sm"
                   className="border-primary text-primary hover:bg-primary/10"
                   onClick={() => handleViewClick(project.viewUrls)}
-                  disabled={!project.viewUrls || project.viewUrls[0] === "#"}
+                  disabled={!project.viewUrls || project.viewUrls.length === 0 || project.viewUrls[0] === "#"}
                 >
                   View
                 </Button>
