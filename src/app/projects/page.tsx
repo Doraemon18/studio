@@ -30,9 +30,7 @@ const projects: Project[] = [
       "Project Link: https://drive.google.com/drive/folders/1pXUmIyfkK5uGvas19YlcuYeUnoT2Vztp?usp=drive_link"
     ],
     viewUrls: [
-      "/IMAGES/Picture11.png",
-      "/IMAGES/Picture2.png",
-      "/IMAGES/Picture3.png"
+      "/3D_School_Model_Details.pdf",
     ],
   },
   {
