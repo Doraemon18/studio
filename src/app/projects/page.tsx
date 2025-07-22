@@ -26,7 +26,8 @@ const projects: Project[] = [
     details: [
       "Software Used: Autodesk Revit 2022",
       "Key Features: Parametric modeling, detailed component creation, site planning.",
-      "Outcome: A realistic and scalable 3D representation of a school facility."
+      "Outcome: A realistic and scalable 3D representation of a school facility.",
+      "Project Link: https://drive.google.com/drive/folders/1pXUmIyfkK5uGvas19YlcuYeUnoT2Vztp?usp=drive_link"
     ],
     viewUrls: [
       "/IMAGES/Picture11.png",
