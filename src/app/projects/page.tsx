@@ -21,7 +21,7 @@ const projects: Project[] = [
     id: "1",
     title: "3-D School Model using Revit Software",
     description: "Developed a comprehensive 3D architectural model of a school campus utilizing Autodesk Revit. This project involved detailed modeling of structures, interiors, and site layout.",
-    imageUrl: "/IMAGES/Picture12.png",
+    imageUrl: "/3D View 8.jpg",
     imageHint: "architecture 3d model",
     details: [
       "Software Used: Autodesk Revit 2022",
