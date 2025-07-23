@@ -10,6 +10,7 @@ import {
   UsersRound,
   Contact,
   Home,
+  GraduationCap,
 } from "lucide-react";
 import {
   SidebarMenu,
@@ -24,6 +25,7 @@ const navItems = [
   { href: "/skills", label: "Skills", icon: Sparkles },
   { href: "/achievements", label: "Achievements", icon: Award },
   { href: "/participation", label: "Participation", icon: UsersRound },
+  { href: "/education", label: "Education", icon: GraduationCap },
   { href: "/contact", label: "Contact", icon: Contact },
 ];
 

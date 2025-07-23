@@ -40,7 +40,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <p className="max-w-[600px] text-primary-foreground/80 md:text-lg mx-auto lg:mx-0 dark:text-primary-foreground/70">
-                  My name is Ranvir Kumar, and I am currently a Third-year undergraduate student at the Indian Institute of Technology (IIT) Kharagpur, pursuing a B.Tech in Civil Engineering. I was born on January 5, 2004, in Bihar, and I completed my 10th grade from Kendriya Vidyalaya in 2020 and my 12th grade from Guru Vashistha in 2022.
+                  My name is Ranvir Kumar.I am a third year undergraduate student of the department of civil engineering enrolled in its B.tech course.I am a boarder of Jagdish Chandra Bose hall of residence.I am from Patna,Bihar.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   <Button asChild variant="outline" size="md" className="border-transparent text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--instagram))' }}>
