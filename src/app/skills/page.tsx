@@ -10,7 +10,17 @@ const skills = [
   { name: "3D Modelling (Revit)", category: "Technical Skills" },
   { name: "Editing in Canva", category: "Design Skills" },
   { name: "Problem Solving", category: "Soft Skills" },
-  { name: "Microsoft Office Suite", category: "Technical Skills" },
+  { name: "Data Science", category: "Technical Skills" },
+  { name: "SQL", category: "Technical Skills" },
+  { name: "Abstract Reasoning", category: "Soft Skills" },
+  { name: "Analytical Reasoning", category: "Soft Skills" },
+  { name: "Quantitative Ability", category: "Soft Skills" },
+  { name: "Data Interpretation", category: "Technical Skills" },
+  { name: "Verbal Ability", category: "Soft Skills" },
+  { name: "Metlab", category: "Technical Skills" },
+  { name: "Machine Learning (Fundamentals)", category: "Technical Skills" },
+  { name: "Basic knowledge of Python and C++", category: "Technical Skills" },
+  { name: "Photoshop", category: "Design Skills" },
 ];
 
 const skillCategories = Array.from(new Set(skills.map(skill => skill.category)));
